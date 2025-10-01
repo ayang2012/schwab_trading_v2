@@ -279,8 +279,8 @@ class TestAssignmentDatabase:
         assert len(assignments) == 1
         
     def test_record_assignment_basis_new_ticker(self, temp_db):
-        """Test recording basis for new ticker."""
-        temp_db.record_assignment_basis('AAPL', 100, 150.0, '2023-12-15T20:30:00Z')
+        """Test recording assignment basis for new ticker."""
+        temp_db.record_assignment_basis('AAPL', 100, 150.0, '2023-12-15T20:30:00Z', 'PUT')
         
         shares = temp_db.get_assigned_shares('AAPL')
         basis = temp_db.get_assigned_basis('AAPL')
@@ -291,10 +291,10 @@ class TestAssignmentDatabase:
     def test_record_assignment_basis_existing_ticker(self, temp_db):
         """Test recording additional basis for existing ticker."""
         # First assignment
-        temp_db.record_assignment_basis('AAPL', 100, 150.0, '2023-12-15T20:30:00Z')
+        temp_db.record_assignment_basis('AAPL', 100, 150.0, '2023-12-15T20:30:00Z', 'PUT')
         
         # Second assignment
-        temp_db.record_assignment_basis('AAPL', 100, 160.0, '2023-12-16T20:30:00Z')
+        temp_db.record_assignment_basis('AAPL', 100, 160.0, '2023-12-16T20:30:00Z', 'PUT')
         
         shares = temp_db.get_assigned_shares('AAPL')
         basis = temp_db.get_assigned_basis('AAPL')
@@ -306,7 +306,7 @@ class TestAssignmentDatabase:
         """Test assignment summary statistics."""
         normalized = normalize_assignment_event(sample_assignment_transaction, 'test_account')
         temp_db.upsert_assignment(normalized)
-        temp_db.record_assignment_basis('AAPL', 100, 150.0, '2023-12-15T20:30:00Z')
+        temp_db.record_assignment_basis('AAPL', 100, 150.0, '2023-12-15T20:30:00Z', 'PUT')
         
         summary = temp_db.get_assignment_summary()
         
@@ -412,7 +412,7 @@ class TestAssignmentImpact:
         # Record an assignment
         normalized = normalize_assignment_event(sample_assignment_transaction, 'test_account')
         temp_db.upsert_assignment(normalized)
-        temp_db.record_assignment_basis('AAPL', 100, 150.0, '2023-12-15T20:30:00Z')
+        temp_db.record_assignment_basis('AAPL', 100, 150.0, '2023-12-15T20:30:00Z', 'PUT')
         
         impact = get_assignment_impact_on_positions('AAPL', temp_db)
         

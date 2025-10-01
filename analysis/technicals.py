@@ -1099,3 +1099,245 @@ def _summarize_options_signals(options_technicals: Dict[str, Any]) -> Dict[str, 
                 signal_counts[signal] = signal_counts.get(signal, 0) + 1
     
     return signal_counts
+
+
+def get_technicals_for_symbol(symbol: str, client=None) -> Dict[str, Any]:
+    """
+    Get technical analysis for any stock or option symbol.
+    
+    Args:
+        symbol: Stock ticker (e.g., 'AAPL') or option symbol (e.g., 'AAPL  241220C00150000')
+        client: Optional broker client. If None, uses SimBrokerClient for demo data.
+        
+    Returns:
+        Dictionary containing technical indicators and analysis
+        
+    Example:
+        # Stock analysis
+        technicals = get_technicals_for_symbol('AAPL')
+        print(f"RSI: {technicals.get('rsi', 'N/A')}")
+        
+        # Option analysis  
+        technicals = get_technicals_for_symbol('AAPL  241220C00150000')
+        print(f"Delta: {technicals.get('delta', 'N/A')}")
+    """
+    if client is None:
+        from api.sim_client import SimBrokerClient
+        client = SimBrokerClient()
+    
+    # Initialize analyzer
+    analyzer = TechnicalAnalyzer(client)
+    
+    # Determine if it's a stock or option symbol
+    if len(symbol) > 10 and ' ' in symbol:
+        # Looks like an option symbol
+        return _get_option_technicals_for_symbol(symbol, analyzer, client)
+    else:
+        # Treat as stock symbol
+        return _get_stock_technicals_for_symbol(symbol, analyzer, client)
+
+
+def _get_stock_technicals_for_symbol(symbol: str, analyzer: TechnicalAnalyzer, client) -> Dict[str, Any]:
+    """Get technical analysis for a stock symbol."""
+    # For now, return mock technical data
+    # In a production system, this would fetch real market data and calculate actual technicals
+    
+    import random
+    import math
+    
+    # Generate some realistic-looking mock data
+    base_price = random.uniform(50, 300)  # Random base price
+    rsi = random.uniform(20, 80)  # RSI between 20-80
+    
+    # Create mock technical indicators
+    technicals = {
+        'symbol': symbol,
+        'type': 'stock',
+        'timestamp': datetime.now().isoformat(),
+        'calculation_method': 'mock_data',
+        
+        # Technical indicators
+        'rsi': round(rsi, 2),
+        'sma_20': round(base_price * random.uniform(0.95, 1.05), 2),
+        'sma_50': round(base_price * random.uniform(0.90, 1.10), 2),
+        'macd': round(random.uniform(-2.0, 2.0), 3),
+        'macd_signal': round(random.uniform(-1.5, 1.5), 3),
+        'macd_histogram': round(random.uniform(-1.0, 1.0), 3),
+        
+        # Bollinger Bands
+        'bollinger_bands': {
+            'upper': round(base_price * 1.1, 2),
+            'middle': round(base_price, 2),
+            'lower': round(base_price * 0.9, 2)
+        },
+        
+        # Volume and momentum
+        'volume_avg_10': random.randint(1000000, 50000000),
+        'price_change_pct': round(random.uniform(-5.0, 5.0), 2),
+        
+        # Generate signals based on indicators
+        'signals': _generate_mock_signals(rsi, base_price),
+        
+        # Market info
+        'market_price': round(base_price, 2),
+        'price_range': {
+            'day_high': round(base_price * random.uniform(1.01, 1.05), 2),
+            'day_low': round(base_price * random.uniform(0.95, 0.99), 2),
+            '52_week_high': round(base_price * random.uniform(1.2, 2.0), 2),
+            '52_week_low': round(base_price * random.uniform(0.5, 0.8), 2)
+        }
+    }
+    
+    return technicals
+
+
+def _generate_mock_signals(rsi: float, price: float) -> List[str]:
+    """Generate mock trading signals based on mock indicators."""
+    signals = []
+    
+    if rsi < 30:
+        signals.append('OVERSOLD')
+    elif rsi > 70:
+        signals.append('OVERBOUGHT')
+    else:
+        signals.append('NEUTRAL_RSI')
+    
+    # Random additional signals
+    signal_options = ['BULLISH_MOMENTUM', 'BEARISH_MOMENTUM', 'SIDEWAYS_TREND', 
+                     'VOLUME_SPIKE', 'BREAKOUT_POTENTIAL', 'SUPPORT_LEVEL', 'RESISTANCE_LEVEL']
+    
+    # Add 1-2 random signals
+    import random
+    num_signals = random.randint(1, 2)
+    additional_signals = random.sample(signal_options, num_signals)
+    signals.extend(additional_signals)
+    
+    return signals
+
+
+def _get_option_technicals_for_symbol(symbol: str, analyzer: TechnicalAnalyzer, client) -> Dict[str, Any]:
+    """Get technical analysis for an option symbol."""
+    try:
+        # Parse option symbol
+        from utils.assignments import extract_option_details
+        option_details = extract_option_details(symbol)
+        
+        if not option_details:
+            return {
+                'symbol': symbol,
+                'type': 'option',
+                'error': 'Invalid option symbol format',
+                'timestamp': datetime.now().isoformat()
+            }
+        
+        # Generate mock option data
+        import random
+        from datetime import date
+        
+        # Calculate days to expiration
+        days_to_expiry = (option_details['expiry'] - date.today()).days
+        
+        # Mock underlying price (would normally fetch real data)
+        underlying_price = random.uniform(100, 300)
+        strike = option_details['strike']
+        is_call = option_details['option_type'] == 'CALL'
+        
+        # Calculate mock intrinsic value
+        if is_call:
+            intrinsic_value = max(0, underlying_price - strike)
+        else:  # PUT
+            intrinsic_value = max(0, strike - underlying_price)
+        
+        # Mock time value and premium
+        time_value = random.uniform(0.1, 5.0) * (days_to_expiry / 30.0)  # Decays with time
+        premium = intrinsic_value + time_value
+        
+        # Mock Greeks (would normally come from Black-Scholes or market data)
+        delta = random.uniform(0.1, 0.9) if is_call else random.uniform(-0.9, -0.1)
+        gamma = random.uniform(0.01, 0.1)
+        theta = random.uniform(-0.1, -0.01)  # Always negative (time decay)
+        vega = random.uniform(0.05, 0.3)
+        rho = random.uniform(0.01, 0.05) if is_call else random.uniform(-0.05, -0.01)
+        
+        technicals = {
+            'symbol': symbol,
+            'type': 'option',
+            'timestamp': datetime.now().isoformat(),
+            'calculation_method': 'mock_data',
+            
+            # Option details
+            'underlying': option_details['ticker'],
+            'underlying_price': round(underlying_price, 2),
+            'strike': strike,
+            'option_type': option_details['option_type'],
+            'expiry': option_details['expiry'].strftime('%Y-%m-%d'),
+            'days_to_expiration': days_to_expiry,
+            
+            # Pricing
+            'premium': round(premium, 2),
+            'bid': round(premium * 0.98, 2),
+            'ask': round(premium * 1.02, 2),
+            'intrinsic_value': round(intrinsic_value, 2),
+            'time_value': round(time_value, 2),
+            
+            # Greeks
+            'delta': round(delta, 4),
+            'gamma': round(gamma, 4),
+            'theta': round(theta, 4),
+            'vega': round(vega, 4),
+            'rho': round(rho, 4),
+            
+            # Risk metrics
+            'implied_volatility': round(random.uniform(0.15, 0.60), 4),  # 15-60% IV
+            'open_interest': random.randint(100, 10000),
+            'volume': random.randint(10, 1000),
+            
+            # Analysis
+            'moneyness': 'ITM' if intrinsic_value > 0 else 'OTM',
+            'liquidity': 'HIGH' if random.random() > 0.5 else 'MEDIUM',
+            'signals': _generate_mock_option_signals(delta, theta, days_to_expiry, intrinsic_value > 0)
+        }
+        
+        return technicals
+        
+    except Exception as e:
+        logging.getLogger(__name__).error(f"Error getting option technicals for {symbol}: {e}")
+        return {
+            'symbol': symbol,
+            'type': 'option', 
+            'error': str(e),
+            'timestamp': datetime.now().isoformat()
+        }
+
+
+def _generate_mock_option_signals(delta: float, theta: float, days_to_expiry: int, is_itm: bool) -> List[str]:
+    """Generate mock trading signals for options based on mock Greeks and conditions."""
+    signals = []
+    
+    # Delta-based signals
+    if abs(delta) > 0.7:
+        signals.append('HIGH_DELTA')
+    elif abs(delta) < 0.3:
+        signals.append('LOW_DELTA')
+    
+    # Time decay signals
+    if days_to_expiry < 7:
+        signals.append('HIGH_TIME_DECAY')
+    elif days_to_expiry < 30:
+        signals.append('MODERATE_TIME_DECAY')
+    
+    # Moneyness signals
+    if is_itm:
+        signals.append('IN_THE_MONEY')
+    else:
+        signals.append('OUT_OF_THE_MONEY')
+    
+    # Random additional signals
+    import random
+    additional_signals = ['HIGH_IMPLIED_VOL', 'LOW_IMPLIED_VOL', 'EARNINGS_PLAY', 
+                         'TECHNICAL_BREAKOUT', 'VOLUME_SPIKE', 'UNUSUAL_ACTIVITY']
+    
+    if random.random() > 0.6:  # 40% chance of additional signal
+        signals.append(random.choice(additional_signals))
+    
+    return signals

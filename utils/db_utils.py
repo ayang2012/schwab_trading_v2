@@ -9,6 +9,18 @@ from typing import Dict, List, Optional, Any, Union
 from contextlib import contextmanager
 import logging
 
+try:
+    from .environment import EnvironmentConfig
+except ImportError:
+    # Fallback for when environment module isn't available
+    class EnvironmentConfig:
+        @staticmethod
+        def is_test_environment():
+            return False
+        @staticmethod
+        def warn_if_production():
+            pass
+
 logger = logging.getLogger(__name__)
 
 
@@ -17,6 +29,12 @@ class AssignmentDB:
     
     def __init__(self, db_path: Union[str, Path] = "data/assignments.db"):
         self.db_path = Path(db_path)
+        
+        # Safety check for production database access
+        if str(db_path) == "data/assignments.db" and not EnvironmentConfig.is_test_environment():
+            logger.warning("⚠️  Accessing production assignment database")
+            EnvironmentConfig.warn_if_production()
+        
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         self._init_schema()
     
@@ -26,20 +44,20 @@ class AssignmentDB:
             # Assignments table - stores each assignment event
             conn.execute("""
                 CREATE TABLE IF NOT EXISTS assignments (
-                    id TEXT PRIMARY KEY,                -- broker transaction id or stable hash
-                    account_hash TEXT NOT NULL,         -- account identifier
-                    option_symbol TEXT NOT NULL,        -- contract symbol (e.g., "AAPL  231215C00150000")
-                    ticker TEXT NOT NULL,               -- underlying stock ticker
-                    contracts INTEGER NOT NULL,         -- number of contracts assigned
-                    shares INTEGER NOT NULL,            -- number of shares (usually contracts * 100)
-                    price_per_share REAL,               -- assignment price per share
-                    total_amount REAL,                  -- total assignment value
-                    assigned_at TEXT NOT NULL,          -- assignment timestamp (ISO format)
-                    transaction_type TEXT,              -- broker's transaction type
-                    related_order_id TEXT,              -- related order if available
-                    raw_payload TEXT,                   -- full broker event as JSON
-                    recorded_at TEXT DEFAULT CURRENT_TIMESTAMP,
-                    UNIQUE(id)
+                    id TEXT PRIMARY KEY,
+                    account_hash TEXT NOT NULL,
+                    option_symbol TEXT,              -- original option contract symbol
+                    ticker TEXT NOT NULL,            -- underlying stock ticker
+                    option_type TEXT,                -- CALL or PUT
+                    contracts INTEGER,               -- number of option contracts
+                    shares INTEGER NOT NULL,         -- shares assigned (contracts * 100)
+                    price_per_share REAL,            -- assignment price per share
+                    total_amount REAL,               -- total assignment value
+                    assigned_at TEXT NOT NULL,       -- assignment timestamp
+                    transaction_type TEXT,           -- broker transaction type
+                    related_order_id TEXT,           -- related order/transaction ID
+                    raw_payload TEXT,                -- original broker data (JSON)
+                    recorded_at TEXT DEFAULT CURRENT_TIMESTAMP
                 )
             """)
             
@@ -54,6 +72,12 @@ class AssignmentDB:
                     assignment_count INTEGER DEFAULT 0   -- number of assignments
                 )
             """)
+            
+            # Add option_type column if it doesn't exist (for existing databases)
+            try:
+                conn.execute("ALTER TABLE assignments ADD COLUMN option_type TEXT")
+            except sqlite3.OperationalError:
+                pass  # Column already exists
             
             # Indexes for performance
             conn.execute("CREATE INDEX IF NOT EXISTS idx_assignments_ticker ON assignments(ticker)")
@@ -89,15 +113,16 @@ class AssignmentDB:
             try:
                 conn.execute("""
                     INSERT INTO assignments (
-                        id, account_hash, option_symbol, ticker, contracts, shares,
+                        id, account_hash, option_symbol, ticker, option_type, contracts, shares,
                         price_per_share, total_amount, assigned_at, transaction_type,
                         related_order_id, raw_payload
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, (
                     assignment_dict['id'],
                     assignment_dict['account_hash'],
                     assignment_dict['option_symbol'],
                     assignment_dict['ticker'],
+                    assignment_dict.get('option_type'),
                     assignment_dict['contracts'],
                     assignment_dict['shares'],
                     assignment_dict.get('price_per_share'),
@@ -114,22 +139,32 @@ class AssignmentDB:
                 return False
     
     def record_assignment_basis(self, ticker: str, shares: int, price_per_share: float, 
-                              assigned_at: str, metadata: Optional[Dict] = None):
+                              assigned_at: str, option_type: str, metadata: Optional[Dict] = None):
         """
         Update assigned basis tracking for a ticker.
         
         Args:
             ticker: Stock symbol
-            shares: Number of shares assigned
+            shares: Number of shares assigned (always positive)
             price_per_share: Assignment price per share
             assigned_at: Assignment timestamp
+            option_type: 'PUT' or 'CALL'
             metadata: Additional metadata for logging
         """
         if price_per_share is None:
             logger.warning(f"Cannot update basis for {ticker}: price_per_share is None")
             return
         
-        total_cost = shares * price_per_share
+        # PUT assignments increase position, CALL assignments decrease position
+        if option_type == 'PUT':
+            shares_delta = shares  # Positive - we got assigned shares
+            cost_delta = shares * price_per_share  # Cost we paid
+        elif option_type == 'CALL':
+            shares_delta = -shares  # Negative - shares were called away
+            cost_delta = -(shares * price_per_share)  # We received money (negative cost)
+        else:
+            logger.warning(f"Unknown option type {option_type} for {ticker}")
+            return
         
         with self.get_connection() as conn:
             # Get current basis or create new record
@@ -138,8 +173,8 @@ class AssignmentDB:
             
             if current:
                 # Update existing record
-                new_total_shares = current['total_shares'] + shares
-                new_total_cost = current['total_cost'] + total_cost
+                new_total_shares = current['total_shares'] + shares_delta
+                new_total_cost = current['total_cost'] + cost_delta
                 new_avg_basis = new_total_cost / new_total_shares if new_total_shares > 0 else 0
                 new_count = current['assignment_count'] + 1
                 
@@ -151,13 +186,16 @@ class AssignmentDB:
                 """, (new_total_shares, new_total_cost, new_avg_basis, 
                       assigned_at, new_count, ticker))
             else:
-                # Insert new record
-                avg_basis = price_per_share
-                conn.execute("""
-                    INSERT INTO assigned_basis 
-                    (ticker, total_shares, total_cost, avg_basis, last_assignment, assignment_count)
-                    VALUES (?, ?, ?, ?, ?, ?)
-                """, (ticker, shares, total_cost, avg_basis, assigned_at, 1))
+                # Insert new record (only for PUT assignments that add shares)
+                if option_type == 'PUT':
+                    avg_basis = price_per_share
+                    conn.execute("""
+                        INSERT INTO assigned_basis 
+                        (ticker, total_shares, total_cost, avg_basis, last_assignment, assignment_count)
+                        VALUES (?, ?, ?, ?, ?, ?)
+                    """, (ticker, shares, cost_delta, avg_basis, assigned_at, 1))
+                else:
+                    logger.warning(f"Trying to insert CALL assignment for {ticker} with no existing position")
             
             logger.info(f"Updated assigned basis for {ticker}: {shares} shares at ${price_per_share:.2f}")
     

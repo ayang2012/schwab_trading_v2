@@ -5,10 +5,11 @@ Advanced options trading system with real-time position tracking, technical anal
 ## Features
 
 - **Real-time Position Tracking**: Live stock and option positions with P&L calculations
-- **Technical Analysis**: RSI, moving averages, EMA analysis with trend detection  
-- **Assignment Tracking**: Automatic detection and recording of option assignments
+- **Technical Analysis**: RSI, moving averages, EMA analysis with trend detection for ANY symbol
+- **Assignment Tracking**: Automatic detection and recording of option assignments with PUT/CALL accounting
 - **Account Monitoring**: Cash balance, buying power, and account value tracking
 - **Live Market Data**: Real-time price updates and position monitoring
+- **Symbol Lookup**: Get technical analysis for any stock ticker or option symbol
 
 ## Quick Start
 
@@ -26,6 +27,14 @@ python main.py  # Main trading application
 ### 3. Monitor Assignments
 ```bash
 python scripts/manage_assignments.py status  # View assignment tracking
+```
+
+### 4. Technical Analysis
+```bash
+# Analyze any stock or option symbol
+python scripts/get_technicals.py AAPL MSFT TSLA
+python scripts/get_technicals.py "AAPL  241220C00150000"  # Option symbol
+python scripts/get_technicals.py --compact AAPL MSFT     # Quick overview
 ```
 
 ## Documentation

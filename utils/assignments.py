@@ -333,6 +333,7 @@ def normalize_assignment_event(transaction: Dict[str, Any], account_hash: str) -
             'account_hash': account_hash,
             'option_symbol': option_symbol,
             'ticker': ticker,
+            'option_type': option_details['option_type'],
             'contracts': contracts,
             'shares': shares,
             'price_per_share': price_per_share,
@@ -436,6 +437,7 @@ def fetch_and_record_assignments(
                             normalized['shares'],
                             normalized['price_per_share'],
                             normalized['assigned_at'],
+                            normalized.get('option_type', 'PUT'),  # Default to PUT if missing
                             {'assignment_id': normalized['id']}
                         )
                     
