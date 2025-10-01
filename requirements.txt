@@ -1,0 +1,23 @@
+# Core dependencies for schwab_trading_v2
+
+# Schwab API client (unofficial)
+# Install this to enable real account data: pip install schwab-py
+# schwab-py>=1.0.0
+
+# Standard library dependencies (included with Python)
+# - dataclasses (Python 3.7+)
+# - pathlib (Python 3.4+)
+# - datetime (built-in)
+# - decimal (built-in)
+# - json (built-in)
+# - argparse (built-in)
+# - os (built-in)
+
+# Development dependencies
+pytest>=7.0.0          # For unit tests
+black>=22.0.0          # Code formatting  
+mypy>=1.0.0            # Type checking
+
+# Optional development dependencies (uncomment as needed)
+# pytest-cov>=4.0.0     # Test coverage reporting
+# pytest-xdist>=3.0.0   # Parallel test execution

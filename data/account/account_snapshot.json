@@ -1,0 +1,150 @@
+{
+  "generated_at": "2025-10-01T05:43:29.164975",
+  "cash": "2723.08",
+  "buying_power": "2723.08",
+  "total_account_value": "352505.32",
+  "stocks": [
+    {
+      "symbol": "GOOG",
+      "qty": 140,
+      "avg_cost": "170.7469285714",
+      "market_price": "242.02999999999997",
+      "market_value": "33884.19999999999580",
+      "pnl": "9979.63000000399580"
+    },
+    {
+      "symbol": "BKNG",
+      "qty": 3,
+      "avg_cost": "4434.0",
+      "market_price": "5357.93",
+      "market_value": "16073.79",
+      "pnl": "2771.79"
+    },
+    {
+      "symbol": "SOFI",
+      "qty": 300,
+      "avg_cost": "28.586633333333",
+      "market_price": "26.0",
+      "market_value": "7800.0",
+      "pnl": "-775.989999999900"
+    },
+    {
+      "symbol": "AMZN",
+      "qty": 250,
+      "avg_cost": "199.23892",
+      "market_price": "218.14",
+      "market_value": "54535.00",
+      "pnl": "4725.27000"
+    },
+    {
+      "symbol": "CRM",
+      "qty": 100,
+      "avg_cost": "245.2566",
+      "market_price": "236.5",
+      "market_value": "23650.0",
+      "pnl": "-875.6600"
+    },
+    {
+      "symbol": "ASML",
+      "qty": 32,
+      "avg_cost": "710.828125",
+      "market_price": "964.01",
+      "market_value": "30848.32",
+      "pnl": "8101.820000"
+    },
+    {
+      "symbol": "UBER",
+      "qty": 200,
+      "avg_cost": "67.6216",
+      "market_price": "97.64",
+      "market_value": "19528.00",
+      "pnl": "6003.6800"
+    },
+    {
+      "symbol": "AAL",
+      "qty": 11100,
+      "avg_cost": "11.78741981982",
+      "market_price": "11.16",
+      "market_value": "123876.00",
+      "pnl": "-6964.36000000200"
+    }
+  ],
+  "options": [
+    {
+      "symbol": "AAL",
+      "contract_symbol": "AAL   251003C00011500",
+      "qty": -43,
+      "avg_cost": "0.133362790698",
+      "market_price": "0.075",
+      "market_value": "-3.225",
+      "pnl": "2.509600000014",
+      "total_pnl": "250.960000001400",
+      "strike": "11.5",
+      "expiry": "2025-10-03T00:00:00",
+      "put_call": "CALL"
+    },
+    {
+      "symbol": "AMZN",
+      "contract_symbol": "AMZN  251003C00227500",
+      "qty": -2,
+      "avg_cost": "0.95335",
+      "market_price": "0.4",
+      "market_value": "-0.8",
+      "pnl": "1.10670",
+      "total_pnl": "110.67000",
+      "strike": "227.5",
+      "expiry": "2025-10-03T00:00:00",
+      "put_call": "CALL"
+    },
+    {
+      "symbol": "ACHR",
+      "contract_symbol": "ACHR  251003P00009500",
+      "qty": -11,
+      "avg_cost": "0.393363636364",
+      "market_price": "0.245",
+      "market_value": "-2.695",
+      "pnl": "1.632000000004",
+      "total_pnl": "163.200000000400",
+      "strike": "9.5",
+      "expiry": "2025-10-03T00:00:00",
+      "put_call": "PUT"
+    },
+    {
+      "symbol": "SOFI",
+      "contract_symbol": "SOFI  251003C00029000",
+      "qty": -3,
+      "avg_cost": "0.323366666667",
+      "market_price": "0.065",
+      "market_value": "-0.195",
+      "pnl": "0.775100000001",
+      "total_pnl": "77.510000000100",
+      "strike": "29.0",
+      "expiry": "2025-10-03T00:00:00",
+      "put_call": "CALL"
+    },
+    {
+      "symbol": "CRM",
+      "contract_symbol": "CRM   251003C00247500",
+      "qty": -1,
+      "avg_cost": "2.3034",
+      "market_price": "0.54",
+      "market_value": "-0.54",
+      "pnl": "1.7634",
+      "total_pnl": "176.3400",
+      "strike": "247.5",
+      "expiry": "2025-10-03T00:00:00",
+      "put_call": "CALL"
+    }
+  ],
+  "mutual_funds": [
+    {
+      "symbol": "SWVXX",
+      "qty": 40332,
+      "avg_cost": "1.0",
+      "market_price": "1.0",
+      "market_value": "40332.0",
+      "pnl": "0.0",
+      "description": "SCHWAB PRIME ADVANTAGE MONEY INVESTOR"
+    }
+  ]
+}
