@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "generated_at": "2025-10-02T21:21:35.856374",
+    "strategy": "weekly_cash_secured_puts_final_selections",
+    "account_value": "359902.81",
+    "available_cash": "2838.12",
+    "selection_criteria": "Top composite score per symbol",
+    "scoring_weights": {
+      "return_potential": "40%",
+      "underlying_quality": "25%",
+      "assignment_likelihood": "20%",
+      "liquidity": "10%",
+      "risk_management": "5%"
+    },
+    "source_file": "put_recommendations_20251002_212133.json"
+  },
+  "final_selections": {}
+}

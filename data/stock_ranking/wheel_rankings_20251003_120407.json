@@ -1,0 +1,193 @@
+{
+  "put_candidates": [
+    {
+      "symbol": "AAL",
+      "score": 87.0,
+      "grade": "EXCELLENT",
+      "breakdown": {
+        "rsi": "25.0/25 (EXCELLENT: RSI 33.7)",
+        "stability": "20.0/20 (EXCELLENT: 0.3% move)",
+        "support": "10.5/15 (MODERATE: 5.3% above)",
+        "volume": "10.0/10 (EXCELLENT: 1.0x avg)",
+        "trend": "9.0/15 (SIDEWAYS)",
+        "bollinger": "9.0/10 (LOWER HALF - GOOD)",
+        "macd": "3.5/5 (NEUTRAL)"
+      },
+      "strategy": "cash_secured_put",
+      "rsi": 33.69,
+      "price": 219.89,
+      "price_change": 0.27
+    },
+    {
+      "symbol": "OXY",
+      "score": 82.5,
+      "grade": "EXCELLENT",
+      "breakdown": {
+        "rsi": "20.0/25 (GOOD: RSI 25.1)",
+        "stability": "16.0/20 (GOOD: 1.5% move)",
+        "support": "10.5/15 (MODERATE: 5.3% above)",
+        "volume": "10.0/10 (EXCELLENT: 1.0x avg)",
+        "trend": "13.5/15 (OVERSOLD - GOOD)",
+        "bollinger": "9.0/10 (LOWER HALF - GOOD)",
+        "macd": "3.5/5 (NEUTRAL)"
+      },
+      "strategy": "cash_secured_put",
+      "rsi": 25.08,
+      "price": 231.22,
+      "price_change": -1.49
+    },
+    {
+      "symbol": "AMZN",
+      "score": 77.0,
+      "grade": "GOOD",
+      "breakdown": {
+        "rsi": "25.0/25 (EXCELLENT: RSI 42.7)",
+        "stability": "10.0/20 (FAIR: 2.1% move)",
+        "support": "10.5/15 (MODERATE: 5.3% above)",
+        "volume": "10.0/10 (EXCELLENT: 1.0x avg)",
+        "trend": "9.0/15 (SIDEWAYS)",
+        "bollinger": "9.0/10 (LOWER HALF - GOOD)",
+        "macd": "3.5/5 (NEUTRAL)"
+      },
+      "strategy": "cash_secured_put",
+      "rsi": 42.72,
+      "price": 73.74,
+      "price_change": -2.06
+    },
+    {
+      "symbol": "INTC",
+      "score": 77.0,
+      "grade": "GOOD",
+      "breakdown": {
+        "rsi": "25.0/25 (EXCELLENT: RSI 41.3)",
+        "stability": "10.0/20 (FAIR: 2.2% move)",
+        "support": "10.5/15 (MODERATE: 5.3% above)",
+        "volume": "10.0/10 (EXCELLENT: 1.0x avg)",
+        "trend": "9.0/15 (SIDEWAYS)",
+        "bollinger": "9.0/10 (LOWER HALF - GOOD)",
+        "macd": "3.5/5 (NEUTRAL)"
+      },
+      "strategy": "cash_secured_put",
+      "rsi": 41.33,
+      "price": 215.26,
+      "price_change": 2.19
+    },
+    {
+      "symbol": "BAC",
+      "score": 76.5,
+      "grade": "GOOD",
+      "breakdown": {
+        "rsi": "20.0/25 (GOOD: RSI 25.1)",
+        "stability": "10.0/20 (FAIR: 3.4% move)",
+        "support": "10.5/15 (MODERATE: 5.3% above)",
+        "volume": "10.0/10 (EXCELLENT: 1.0x avg)",
+        "trend": "13.5/15 (OVERSOLD - GOOD)",
+        "bollinger": "9.0/10 (LOWER HALF - GOOD)",
+        "macd": "3.5/5 (NEUTRAL)"
+      },
+      "strategy": "cash_secured_put",
+      "rsi": 25.07,
+      "price": 95.29,
+      "price_change": -3.43
+    }
+  ],
+  "call_candidates": [
+    {
+      "symbol": "WFC",
+      "score": 85.5,
+      "grade": "EXCELLENT",
+      "breakdown": {
+        "rsi": "25.0/25 (EXCELLENT: RSI 72.2)",
+        "resistance": "14.0/20 (MODERATE: 5.0% below)",
+        "momentum": "12.0/15 (MODERATE UP: +1.8%)",
+        "volume": "10.0/10 (EXCELLENT: 1.0x avg)",
+        "exhaustion": "13.5/15 (OVERBOUGHT - GOOD)",
+        "bollinger": "8.0/10 (UPPER HALF - GOOD)",
+        "macd": "3.0/5 (NEUTRAL)"
+      },
+      "strategy": "covered_call",
+      "rsi": 72.19,
+      "price": 138.14,
+      "price_change": 1.75
+    },
+    {
+      "symbol": "ACHR",
+      "score": 76.0,
+      "grade": "GOOD",
+      "breakdown": {
+        "rsi": "20.0/25 (GOOD: RSI 61.5)",
+        "resistance": "14.0/20 (MODERATE: 5.0% below)",
+        "momentum": "15.0/15 (STRONG UP: +3.2%)",
+        "volume": "10.0/10 (EXCELLENT: 1.0x avg)",
+        "exhaustion": "6.0/15 (NOT EXTENDED)",
+        "bollinger": "8.0/10 (UPPER HALF - GOOD)",
+        "macd": "3.0/5 (NEUTRAL)"
+      },
+      "strategy": "covered_call",
+      "rsi": 61.46,
+      "price": 158.64,
+      "price_change": 3.23
+    },
+    {
+      "symbol": "QCOM",
+      "score": 73.0,
+      "grade": "GOOD",
+      "breakdown": {
+        "rsi": "20.0/25 (GOOD: RSI 62.0)",
+        "resistance": "14.0/20 (MODERATE: 5.0% below)",
+        "momentum": "12.0/15 (MODERATE UP: +3.0%)",
+        "volume": "10.0/10 (EXCELLENT: 1.0x avg)",
+        "exhaustion": "6.0/15 (NOT EXTENDED)",
+        "bollinger": "8.0/10 (UPPER HALF - GOOD)",
+        "macd": "3.0/5 (NEUTRAL)"
+      },
+      "strategy": "covered_call",
+      "rsi": 62.02,
+      "price": 283.4,
+      "price_change": 2.99
+    },
+    {
+      "symbol": "UBER",
+      "score": 68.5,
+      "grade": "GOOD",
+      "breakdown": {
+        "rsi": "12.5/25 (FAIR: RSI 59.2)",
+        "resistance": "14.0/20 (MODERATE: 5.0% below)",
+        "momentum": "15.0/15 (STRONG UP: +4.1%)",
+        "volume": "10.0/10 (EXCELLENT: 1.0x avg)",
+        "exhaustion": "6.0/15 (NOT EXTENDED)",
+        "bollinger": "8.0/10 (UPPER HALF - GOOD)",
+        "macd": "3.0/5 (NEUTRAL)"
+      },
+      "strategy": "covered_call",
+      "rsi": 59.2,
+      "price": 240.07,
+      "price_change": 4.12
+    },
+    {
+      "symbol": "SOFI",
+      "score": 65.5,
+      "grade": "GOOD",
+      "breakdown": {
+        "rsi": "20.0/25 (GOOD: RSI 63.9)",
+        "resistance": "14.0/20 (MODERATE: 5.0% below)",
+        "momentum": "4.5/15 (NO MOMENTUM: -4.8%)",
+        "volume": "10.0/10 (EXCELLENT: 1.0x avg)",
+        "exhaustion": "6.0/15 (NOT EXTENDED)",
+        "bollinger": "8.0/10 (UPPER HALF - GOOD)",
+        "macd": "3.0/5 (NEUTRAL)"
+      },
+      "strategy": "covered_call",
+      "rsi": 63.85,
+      "price": 245.4,
+      "price_change": -4.8
+    }
+  ],
+  "summary": {
+    "total_put_candidates": 14,
+    "total_call_candidates": 14,
+    "top_put_score": 87.0,
+    "top_call_score": 85.5,
+    "generated_at": "2025-10-03T12:04:07.968052"
+  }
+}

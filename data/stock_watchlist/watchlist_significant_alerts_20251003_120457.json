@@ -1,0 +1,564 @@
+{
+  "generated_at": "2025-10-03T12:04:57.282389",
+  "config_path": "config/settings.py",
+  "storage_reason": "significant_alerts",
+  "wheel_trading_signals": {
+    "good_put_candidates": [
+      {
+        "symbol": "AMZN",
+        "rsi": 36.11,
+        "price": 68.76,
+        "price_change": -4.45,
+        "strategy": "cash_secured_put"
+      },
+      {
+        "symbol": "MU",
+        "rsi": 49.92,
+        "price": 193.9,
+        "price_change": -2.62,
+        "strategy": "cash_secured_put"
+      },
+      {
+        "symbol": "INTC",
+        "rsi": 33.84,
+        "price": 191.9,
+        "price_change": 2.75,
+        "strategy": "cash_secured_put"
+      },
+      {
+        "symbol": "QCOM",
+        "rsi": 40.99,
+        "price": 176.79,
+        "price_change": 4.98,
+        "strategy": "cash_secured_put"
+      },
+      {
+        "symbol": "WFC",
+        "rsi": 41.69,
+        "price": 188.74,
+        "price_change": 4.97,
+        "strategy": "cash_secured_put"
+      },
+      {
+        "symbol": "COP",
+        "rsi": 49.58,
+        "price": 278.67,
+        "price_change": -1.86,
+        "strategy": "cash_secured_put"
+      },
+      {
+        "symbol": "ACHR",
+        "rsi": 36.0,
+        "price": 120.26,
+        "price_change": 4.45,
+        "strategy": "cash_secured_put"
+      }
+    ],
+    "good_call_candidates": [
+      {
+        "symbol": "AAL",
+        "rsi": 76.61,
+        "price": 233.7,
+        "price_change": 4.04,
+        "strategy": "covered_call"
+      },
+      {
+        "symbol": "AMD",
+        "rsi": 71.98,
+        "price": 155.9,
+        "price_change": 1.28,
+        "strategy": "covered_call"
+      },
+      {
+        "symbol": "OXY",
+        "rsi": 60.78,
+        "price": 175.93,
+        "price_change": -2.87,
+        "strategy": "covered_call"
+      },
+      {
+        "symbol": "SOFI",
+        "rsi": 63.0,
+        "price": 79.26,
+        "price_change": 1.93,
+        "strategy": "covered_call"
+      }
+    ],
+    "avoid_stocks": [
+      {
+        "symbol": "GOOG",
+        "rsi": 23.46,
+        "price_change": 4.22,
+        "reason": "too_volatile_or_extreme_rsi"
+      },
+      {
+        "symbol": "UBER",
+        "rsi": 21.52,
+        "price_change": -2.51,
+        "reason": "too_volatile_or_extreme_rsi"
+      },
+      {
+        "symbol": "BAC",
+        "rsi": 22.23,
+        "price_change": 3.06,
+        "reason": "too_volatile_or_extreme_rsi"
+      }
+    ],
+    "summary": {
+      "put_candidates": 7,
+      "call_candidates": 4,
+      "avoid_count": 3
+    }
+  },
+  "watchlist_stocks": {
+    "AAL": {
+      "symbol": "AAL",
+      "type": "stock",
+      "timestamp": "2025-10-03T12:04:57.281981",
+      "calculation_method": "mock_data",
+      "rsi": 76.61,
+      "sma_20": 223.12,
+      "sma_50": 218.41,
+      "macd": 0.424,
+      "macd_signal": 0.836,
+      "macd_histogram": -0.54,
+      "bollinger_bands": {
+        "upper": 257.07,
+        "middle": 233.7,
+        "lower": 210.33
+      },
+      "volume_avg_10": 46786462,
+      "price_change_pct": 4.04,
+      "signals": [
+        "OVERBOUGHT",
+        "VOLUME_SPIKE",
+        "SUPPORT_LEVEL"
+      ],
+      "market_price": 233.7,
+      "price_range": {
+        "day_high": 239.66,
+        "day_low": 230.45,
+        "52_week_high": 356.75,
+        "52_week_low": 162.23
+      }
+    },
+    "GOOG": {
+      "symbol": "GOOG",
+      "type": "stock",
+      "timestamp": "2025-10-03T12:04:57.282028",
+      "calculation_method": "mock_data",
+      "rsi": 23.46,
+      "sma_20": 148.83,
+      "sma_50": 140.55,
+      "macd": -1.725,
+      "macd_signal": -1.059,
+      "macd_histogram": 0.577,
+      "bollinger_bands": {
+        "upper": 169.27,
+        "middle": 153.88,
+        "lower": 138.5
+      },
+      "volume_avg_10": 48385156,
+      "price_change_pct": 4.22,
+      "signals": [
+        "OVERSOLD",
+        "BEARISH_MOMENTUM",
+        "RESISTANCE_LEVEL"
+      ],
+      "market_price": 153.88,
+      "price_range": {
+        "day_high": 161.54,
+        "day_low": 147.72,
+        "52_week_high": 268.24,
+        "52_week_low": 116.2
+      }
+    },
+    "AMZN": {
+      "symbol": "AMZN",
+      "type": "stock",
+      "timestamp": "2025-10-03T12:04:57.282055",
+      "calculation_method": "mock_data",
+      "rsi": 36.11,
+      "sma_20": 65.34,
+      "sma_50": 73.01,
+      "macd": 0.351,
+      "macd_signal": -0.014,
+      "macd_histogram": -0.605,
+      "bollinger_bands": {
+        "upper": 75.63,
+        "middle": 68.76,
+        "lower": 61.88
+      },
+      "volume_avg_10": 38652130,
+      "price_change_pct": -4.45,
+      "signals": [
+        "NEUTRAL_RSI",
+        "BEARISH_MOMENTUM",
+        "SUPPORT_LEVEL"
+      ],
+      "market_price": 68.76,
+      "price_range": {
+        "day_high": 69.92,
+        "day_low": 66.45,
+        "52_week_high": 90.72,
+        "52_week_low": 45.54
+      }
+    },
+    "UBER": {
+      "symbol": "UBER",
+      "type": "stock",
+      "timestamp": "2025-10-03T12:04:57.282080",
+      "calculation_method": "mock_data",
+      "rsi": 21.52,
+      "sma_20": 141.45,
+      "sma_50": 149.31,
+      "macd": 0.79,
+      "macd_signal": -0.845,
+      "macd_histogram": -0.3,
+      "bollinger_bands": {
+        "upper": 158.55,
+        "middle": 144.14,
+        "lower": 129.72
+      },
+      "volume_avg_10": 34102323,
+      "price_change_pct": -2.51,
+      "signals": [
+        "OVERSOLD",
+        "SIDEWAYS_TREND",
+        "BEARISH_MOMENTUM"
+      ],
+      "market_price": 144.14,
+      "price_range": {
+        "day_high": 149.51,
+        "day_low": 140.46,
+        "52_week_high": 223.22,
+        "52_week_low": 79.47
+      }
+    },
+    "AMD": {
+      "symbol": "AMD",
+      "type": "stock",
+      "timestamp": "2025-10-03T12:04:57.282103",
+      "calculation_method": "mock_data",
+      "rsi": 71.98,
+      "sma_20": 156.3,
+      "sma_50": 141.91,
+      "macd": -0.221,
+      "macd_signal": 0.506,
+      "macd_histogram": -0.492,
+      "bollinger_bands": {
+        "upper": 171.49,
+        "middle": 155.9,
+        "lower": 140.31
+      },
+      "volume_avg_10": 25227938,
+      "price_change_pct": 1.28,
+      "signals": [
+        "OVERBOUGHT",
+        "BULLISH_MOMENTUM",
+        "BEARISH_MOMENTUM"
+      ],
+      "market_price": 155.9,
+      "price_range": {
+        "day_high": 162.07,
+        "day_low": 149.0,
+        "52_week_high": 245.64,
+        "52_week_low": 94.81
+      }
+    },
+    "MU": {
+      "symbol": "MU",
+      "type": "stock",
+      "timestamp": "2025-10-03T12:04:57.282126",
+      "calculation_method": "mock_data",
+      "rsi": 49.92,
+      "sma_20": 193.27,
+      "sma_50": 185.61,
+      "macd": -1.45,
+      "macd_signal": 0.416,
+      "macd_histogram": 0.414,
+      "bollinger_bands": {
+        "upper": 213.29,
+        "middle": 193.9,
+        "lower": 174.51
+      },
+      "volume_avg_10": 9711988,
+      "price_change_pct": -2.62,
+      "signals": [
+        "NEUTRAL_RSI",
+        "BEARISH_MOMENTUM",
+        "VOLUME_SPIKE"
+      ],
+      "market_price": 193.9,
+      "price_range": {
+        "day_high": 196.79,
+        "day_low": 185.8,
+        "52_week_high": 257.96,
+        "52_week_low": 98.82
+      }
+    },
+    "INTC": {
+      "symbol": "INTC",
+      "type": "stock",
+      "timestamp": "2025-10-03T12:04:57.282148",
+      "calculation_method": "mock_data",
+      "rsi": 33.84,
+      "sma_20": 200.0,
+      "sma_50": 189.32,
+      "macd": 0.91,
+      "macd_signal": 0.835,
+      "macd_histogram": -0.497,
+      "bollinger_bands": {
+        "upper": 211.09,
+        "middle": 191.9,
+        "lower": 172.71
+      },
+      "volume_avg_10": 37335048,
+      "price_change_pct": 2.75,
+      "signals": [
+        "NEUTRAL_RSI",
+        "BEARISH_MOMENTUM",
+        "BULLISH_MOMENTUM"
+      ],
+      "market_price": 191.9,
+      "price_range": {
+        "day_high": 193.9,
+        "day_low": 184.69,
+        "52_week_high": 271.81,
+        "52_week_low": 107.94
+      }
+    },
+    "QCOM": {
+      "symbol": "QCOM",
+      "type": "stock",
+      "timestamp": "2025-10-03T12:04:57.282170",
+      "calculation_method": "mock_data",
+      "rsi": 40.99,
+      "sma_20": 170.91,
+      "sma_50": 177.79,
+      "macd": 0.89,
+      "macd_signal": -0.902,
+      "macd_histogram": -0.993,
+      "bollinger_bands": {
+        "upper": 194.47,
+        "middle": 176.79,
+        "lower": 159.11
+      },
+      "volume_avg_10": 25268515,
+      "price_change_pct": 4.98,
+      "signals": [
+        "NEUTRAL_RSI",
+        "SIDEWAYS_TREND",
+        "BEARISH_MOMENTUM"
+      ],
+      "market_price": 176.79,
+      "price_range": {
+        "day_high": 182.64,
+        "day_low": 172.23,
+        "52_week_high": 232.13,
+        "52_week_low": 126.32
+      }
+    },
+    "BAC": {
+      "symbol": "BAC",
+      "type": "stock",
+      "timestamp": "2025-10-03T12:04:57.282190",
+      "calculation_method": "mock_data",
+      "rsi": 22.23,
+      "sma_20": 180.03,
+      "sma_50": 174.12,
+      "macd": -0.795,
+      "macd_signal": 1.109,
+      "macd_histogram": 0.086,
+      "bollinger_bands": {
+        "upper": 196.97,
+        "middle": 179.06,
+        "lower": 161.16
+      },
+      "volume_avg_10": 1971469,
+      "price_change_pct": 3.06,
+      "signals": [
+        "OVERSOLD",
+        "SUPPORT_LEVEL",
+        "BREAKOUT_POTENTIAL"
+      ],
+      "market_price": 179.06,
+      "price_range": {
+        "day_high": 187.17,
+        "day_low": 174.81,
+        "52_week_high": 280.75,
+        "52_week_low": 132.08
+      }
+    },
+    "WFC": {
+      "symbol": "WFC",
+      "type": "stock",
+      "timestamp": "2025-10-03T12:04:57.282211",
+      "calculation_method": "mock_data",
+      "rsi": 41.69,
+      "sma_20": 190.24,
+      "sma_50": 195.59,
+      "macd": -1.697,
+      "macd_signal": -0.597,
+      "macd_histogram": 0.63,
+      "bollinger_bands": {
+        "upper": 207.61,
+        "middle": 188.74,
+        "lower": 169.86
+      },
+      "volume_avg_10": 32427491,
+      "price_change_pct": 4.97,
+      "signals": [
+        "NEUTRAL_RSI",
+        "BREAKOUT_POTENTIAL",
+        "SUPPORT_LEVEL"
+      ],
+      "market_price": 188.74,
+      "price_range": {
+        "day_high": 194.89,
+        "day_low": 182.49,
+        "52_week_high": 277.01,
+        "52_week_low": 140.65
+      }
+    },
+    "COP": {
+      "symbol": "COP",
+      "type": "stock",
+      "timestamp": "2025-10-03T12:04:57.282232",
+      "calculation_method": "mock_data",
+      "rsi": 49.58,
+      "sma_20": 267.7,
+      "sma_50": 258.86,
+      "macd": -0.581,
+      "macd_signal": 1.203,
+      "macd_histogram": -0.326,
+      "bollinger_bands": {
+        "upper": 306.54,
+        "middle": 278.67,
+        "lower": 250.8
+      },
+      "volume_avg_10": 32846294,
+      "price_change_pct": -1.86,
+      "signals": [
+        "NEUTRAL_RSI",
+        "BREAKOUT_POTENTIAL",
+        "RESISTANCE_LEVEL"
+      ],
+      "market_price": 278.67,
+      "price_range": {
+        "day_high": 286.5,
+        "day_low": 268.63,
+        "52_week_high": 401.19,
+        "52_week_low": 172.89
+      }
+    },
+    "OXY": {
+      "symbol": "OXY",
+      "type": "stock",
+      "timestamp": "2025-10-03T12:04:57.282253",
+      "calculation_method": "mock_data",
+      "rsi": 60.78,
+      "sma_20": 181.66,
+      "sma_50": 184.56,
+      "macd": -1.338,
+      "macd_signal": 1.001,
+      "macd_histogram": 0.692,
+      "bollinger_bands": {
+        "upper": 193.53,
+        "middle": 175.93,
+        "lower": 158.34
+      },
+      "volume_avg_10": 39151776,
+      "price_change_pct": -2.87,
+      "signals": [
+        "NEUTRAL_RSI",
+        "RESISTANCE_LEVEL"
+      ],
+      "market_price": 175.93,
+      "price_range": {
+        "day_high": 178.44,
+        "day_low": 171.84,
+        "52_week_high": 337.46,
+        "52_week_low": 126.36
+      }
+    },
+    "SOFI": {
+      "symbol": "SOFI",
+      "type": "stock",
+      "timestamp": "2025-10-03T12:04:57.282273",
+      "calculation_method": "mock_data",
+      "rsi": 63.0,
+      "sma_20": 82.13,
+      "sma_50": 77.55,
+      "macd": -0.481,
+      "macd_signal": 1.28,
+      "macd_histogram": -0.334,
+      "bollinger_bands": {
+        "upper": 87.18,
+        "middle": 79.26,
+        "lower": 71.33
+      },
+      "volume_avg_10": 19849690,
+      "price_change_pct": 1.93,
+      "signals": [
+        "NEUTRAL_RSI",
+        "VOLUME_SPIKE",
+        "SUPPORT_LEVEL"
+      ],
+      "market_price": 79.26,
+      "price_range": {
+        "day_high": 82.77,
+        "day_low": 76.73,
+        "52_week_high": 141.31,
+        "52_week_low": 57.17
+      }
+    },
+    "ACHR": {
+      "symbol": "ACHR",
+      "type": "stock",
+      "timestamp": "2025-10-03T12:04:57.282293",
+      "calculation_method": "mock_data",
+      "rsi": 36.0,
+      "sma_20": 124.85,
+      "sma_50": 118.17,
+      "macd": -0.98,
+      "macd_signal": -1.201,
+      "macd_histogram": 0.279,
+      "bollinger_bands": {
+        "upper": 132.29,
+        "middle": 120.26,
+        "lower": 108.24
+      },
+      "volume_avg_10": 45772987,
+      "price_change_pct": 4.45,
+      "signals": [
+        "NEUTRAL_RSI",
+        "VOLUME_SPIKE"
+      ],
+      "market_price": 120.26,
+      "price_range": {
+        "day_high": 124.01,
+        "day_low": 115.22,
+        "52_week_high": 218.26,
+        "52_week_low": 95.65
+      }
+    }
+  },
+  "summary": {
+    "total_watchlist_analyzed": 14,
+    "successful_analyses": 14,
+    "failed_analyses": 0,
+    "watchlist_signals": {
+      "OVERBOUGHT": 2,
+      "VOLUME_SPIKE": 4,
+      "SUPPORT_LEVEL": 5,
+      "OVERSOLD": 3,
+      "BEARISH_MOMENTUM": 7,
+      "RESISTANCE_LEVEL": 3,
+      "NEUTRAL_RSI": 9,
+      "SIDEWAYS_TREND": 2,
+      "BULLISH_MOMENTUM": 2,
+      "BREAKOUT_POTENTIAL": 3
+    }
+  }
+}

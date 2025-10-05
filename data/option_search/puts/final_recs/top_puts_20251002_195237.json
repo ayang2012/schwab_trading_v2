@@ -1,0 +1,238 @@
+{
+  "metadata": {
+    "generated_at": "2025-10-02T19:52:41.424139",
+    "strategy": "weekly_cash_secured_puts_final_selections",
+    "account_value": "359902.81",
+    "available_cash": "2838.12",
+    "selection_criteria": "Top composite score per symbol",
+    "scoring_weights": {
+      "return_potential": "40%",
+      "underlying_quality": "25%",
+      "assignment_likelihood": "20%",
+      "liquidity": "10%",
+      "risk_management": "5%"
+    },
+    "source_file": "put_recommendations_20251002_195237.json"
+  },
+  "final_selections": {
+    "BAC": {
+      "symbol": "BAC",
+      "grade": "EXCELLENT",
+      "current_price": 50.52,
+      "top_put_choice": {
+        "symbol": "BAC",
+        "grade": "EXCELLENT",
+        "strike_price": 42.0,
+        "premium": 0.06,
+        "bid": 0.0,
+        "ask": 0.11,
+        "mark": 0.06,
+        "bid_ask_spread_pct": 0,
+        "days_to_expiry": 1,
+        "expiration_date": "2025-10-03T20:00:00.000+00:00",
+        "collateral_required": 4200.0,
+        "premium_received": 6.0,
+        "max_contracts": 17,
+        "total_premium_income": 102.0,
+        "total_collateral": 71400.0,
+        "annualized_return_pct": 52.14,
+        "downside_protection_pct": 16.86,
+        "break_even_price": 41.94,
+        "assignment_probability_pct": 9.6,
+        "attractiveness_score": 85,
+        "open_interest": 51,
+        "volume": 1,
+        "delta": -0.028,
+        "theta": -0.055,
+        "implied_volatility": 181.107,
+        "criteria_applied": {
+          "min_annualized_return": 15.0,
+          "min_downside_protection": 1.5,
+          "max_assignment_prob": 60.0,
+          "preferred_dte_range": [
+            1,
+            10
+          ],
+          "max_rsi": 75.0,
+          "min_rsi": 25.0,
+          "required_signals": [
+            "EMA BULLISH ALIGNMENT",
+            "ABOVE LONG-TERM EMA"
+          ],
+          "volume_ratio_min": 0.3,
+          "max_bid_ask_spread_pct": 15.0,
+          "min_open_interest": 10,
+          "bollinger_position": "any",
+          "aggressiveness_multiplier": 1.4
+        },
+        "composite_score": 7.6,
+        "score_breakdown": {
+          "return": 6,
+          "quality": 10,
+          "assignment": 6,
+          "liquidity": 10,
+          "risk": 10
+        },
+        "weekly_return_pct": 1.0
+      },
+      "selection_reasoning": {
+        "composite_score": 7.6,
+        "weekly_return_pct": 1.0,
+        "why_selected": "Highest composite score (7.6/10) among 4 options",
+        "key_strengths": [
+          "Good return potential (1.0% weekly)",
+          "EXCELLENT underlying quality",
+          "Good assignment likelihood (OI: 51)",
+          "Excellent liquidity (0% spread)"
+        ]
+      },
+      "alternatives_count": 3,
+      "analysis_timestamp": "2025-10-02T19:52:39.723306"
+    },
+    "WFC": {
+      "symbol": "WFC",
+      "grade": "EXCELLENT",
+      "current_price": 80.5,
+      "top_put_choice": {
+        "symbol": "WFC",
+        "grade": "EXCELLENT",
+        "strike_price": 79.0,
+        "premium": 0.63,
+        "bid": 0.61,
+        "ask": 0.65,
+        "mark": 0.63,
+        "bid_ask_spread_pct": 6.3,
+        "days_to_expiry": 8,
+        "expiration_date": "2025-10-10T20:00:00.000+00:00",
+        "collateral_required": 7900.0,
+        "premium_received": 63.0,
+        "max_contracts": 9,
+        "total_premium_income": 567.0,
+        "total_collateral": 71100.0,
+        "annualized_return_pct": 36.38,
+        "downside_protection_pct": 1.86,
+        "break_even_price": 78.37,
+        "assignment_probability_pct": 40.0,
+        "attractiveness_score": 67.4,
+        "open_interest": 368,
+        "volume": 181,
+        "delta": -0.306,
+        "theta": -0.069,
+        "implied_volatility": 26.313,
+        "criteria_applied": {
+          "min_annualized_return": 15.0,
+          "min_downside_protection": 1.5,
+          "max_assignment_prob": 60.0,
+          "preferred_dte_range": [
+            1,
+            10
+          ],
+          "max_rsi": 75.0,
+          "min_rsi": 25.0,
+          "required_signals": [
+            "EMA BULLISH ALIGNMENT",
+            "ABOVE LONG-TERM EMA"
+          ],
+          "volume_ratio_min": 0.3,
+          "max_bid_ask_spread_pct": 15.0,
+          "min_open_interest": 10,
+          "bollinger_position": "any",
+          "aggressiveness_multiplier": 1.4
+        },
+        "composite_score": 6.5,
+        "score_breakdown": {
+          "return": 4,
+          "quality": 10,
+          "assignment": 8,
+          "liquidity": 6,
+          "risk": 4
+        },
+        "weekly_return_pct": 0.7
+      },
+      "selection_reasoning": {
+        "composite_score": 6.5,
+        "weekly_return_pct": 0.7,
+        "why_selected": "Highest composite score (6.5/10) among 2 options",
+        "key_strengths": [
+          "EXCELLENT underlying quality",
+          "High assignment likelihood (OI: 368)",
+          "Good liquidity (6.3% spread)"
+        ]
+      },
+      "alternatives_count": 1,
+      "analysis_timestamp": "2025-10-02T19:52:40.372955"
+    },
+    "GOOG": {
+      "symbol": "GOOG",
+      "grade": "GOOD",
+      "current_price": 246.76,
+      "top_put_choice": {
+        "symbol": "GOOG",
+        "grade": "GOOD",
+        "strike_price": 237.5,
+        "premium": 1.6,
+        "bid": 1.52,
+        "ask": 1.67,
+        "mark": 1.6,
+        "bid_ask_spread_pct": 9.4,
+        "days_to_expiry": 8,
+        "expiration_date": "2025-10-10T20:00:00.000+00:00",
+        "collateral_required": 23750.0,
+        "premium_received": 160.0,
+        "max_contracts": 1,
+        "total_premium_income": 160.0,
+        "total_collateral": 23750.0,
+        "annualized_return_pct": 30.74,
+        "downside_protection_pct": 3.75,
+        "break_even_price": 235.9,
+        "assignment_probability_pct": 28.0,
+        "attractiveness_score": 73.0,
+        "open_interest": 1401,
+        "volume": 1154,
+        "delta": -0.221,
+        "theta": -0.228,
+        "implied_volatility": 33.38,
+        "criteria_applied": {
+          "min_annualized_return": 25.0,
+          "min_downside_protection": 2.5,
+          "max_assignment_prob": 50.0,
+          "preferred_dte_range": [
+            1,
+            10
+          ],
+          "max_rsi": 80.0,
+          "min_rsi": 20.0,
+          "required_signals": [
+            "ABOVE LONG-TERM EMA"
+          ],
+          "volume_ratio_min": 0.4,
+          "max_bid_ask_spread_pct": 12.0,
+          "min_open_interest": 25,
+          "bollinger_position": "any",
+          "aggressiveness_multiplier": 1.1
+        },
+        "composite_score": 6.25,
+        "score_breakdown": {
+          "return": 4,
+          "quality": 7,
+          "assignment": 10,
+          "liquidity": 6,
+          "risk": 6
+        },
+        "weekly_return_pct": 0.59
+      },
+      "selection_reasoning": {
+        "composite_score": 6.25,
+        "weekly_return_pct": 0.59,
+        "why_selected": "Highest composite score (6.25/10) among 1 options",
+        "key_strengths": [
+          "GOOD underlying quality",
+          "High assignment likelihood (OI: 1,401)",
+          "Good liquidity (9.4% spread)"
+        ]
+      },
+      "alternatives_count": 0,
+      "analysis_timestamp": "2025-10-02T19:52:41.421058"
+    }
+  }
+}

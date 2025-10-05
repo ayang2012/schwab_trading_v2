@@ -1,138 +1,86 @@
 {
-  "generated_at": "2025-10-01T16:34:55.068931",
-  "cash": "2723.08",
-  "buying_power": "2723.08",
-  "total_account_value": "356529.4",
+  "generated_at": "2025-10-05T06:57:15.106879",
+  "cash": "2838.12",
+  "buying_power": "2838.12",
+  "total_account_value": "360528.24",
   "stocks": [
     {
       "symbol": "GOOG",
       "qty": 140,
       "avg_cost": "170.7469285714",
-      "market_price": "244.19",
-      "market_value": "34186.60",
-      "pnl": "10282.0300000040"
+      "market_price": "246.45",
+      "market_value": "34503.00",
+      "pnl": "10598.4300000040"
     },
     {
       "symbol": "BKNG",
       "qty": 3,
       "avg_cost": "4434.0",
-      "market_price": "5321.656666666667",
-      "market_value": "15964.970000000001",
-      "pnl": "2662.970000000001"
+      "market_price": "5418.05",
+      "market_value": "16254.15",
+      "pnl": "2952.15"
     },
     {
       "symbol": "SOFI",
       "qty": 300,
-      "avg_cost": "28.586633333333",
-      "market_price": "26.29",
-      "market_value": "7887.00",
-      "pnl": "-688.989999999900"
+      "avg_cost": "28.5866333333",
+      "market_price": "25.24",
+      "market_value": "7572.00",
+      "pnl": "-1003.9899999900"
     },
     {
       "symbol": "AMZN",
       "qty": 250,
       "avg_cost": "199.23892",
-      "market_price": "220.95",
-      "market_value": "55237.50",
-      "pnl": "5427.77000"
+      "market_price": "219.51",
+      "market_value": "54877.50",
+      "pnl": "5067.77000"
     },
     {
       "symbol": "CRM",
       "qty": 100,
       "avg_cost": "245.2566",
-      "market_price": "234.32",
-      "market_value": "23432.00",
-      "pnl": "-1093.6600"
+      "market_price": "240.36",
+      "market_value": "24036.00",
+      "pnl": "-489.6600"
     },
     {
       "symbol": "ASML",
       "qty": 32,
       "avg_cost": "710.828125",
-      "market_price": "995.26",
-      "market_value": "31848.32",
-      "pnl": "9101.820000"
+      "market_price": "1032.22",
+      "market_value": "33031.04",
+      "pnl": "10284.540000"
     },
     {
       "symbol": "UBER",
       "qty": 200,
       "avg_cost": "67.6216",
-      "market_price": "97.31",
-      "market_value": "19462.00",
-      "pnl": "5937.6800"
+      "market_price": "96.6",
+      "market_value": "19320.0",
+      "pnl": "5795.6800"
     },
     {
       "symbol": "AAL",
       "qty": 11100,
-      "avg_cost": "11.78741981982",
-      "market_price": "11.355",
-      "market_value": "126040.500",
-      "pnl": "-4799.86000000200"
+      "avg_cost": "11.7874198198",
+      "market_price": "11.58",
+      "market_value": "128538.00",
+      "pnl": "-2302.3599997800"
     }
   ],
   "options": [
     {
       "symbol": "AAL",
-      "contract_symbol": "AAL   251003C00011500",
+      "contract_symbol": "AAL   251010C00012000",
       "qty": -43,
-      "avg_cost": "0.133362790698",
-      "market_price": "0.085",
-      "market_value": "-3.655",
-      "pnl": "2.079600000014",
-      "total_pnl": "207.960000001400",
-      "strike": "11.5",
-      "expiry": "2025-10-03T00:00:00",
-      "put_call": "CALL"
-    },
-    {
-      "symbol": "AMZN",
-      "contract_symbol": "AMZN  251003C00227500",
-      "qty": -2,
-      "avg_cost": "0.95335",
-      "market_price": "0.405",
-      "market_value": "-0.810",
-      "pnl": "1.09670",
-      "total_pnl": "109.67000",
-      "strike": "227.5",
-      "expiry": "2025-10-03T00:00:00",
-      "put_call": "CALL"
-    },
-    {
-      "symbol": "ACHR",
-      "contract_symbol": "ACHR  251003P00009500",
-      "qty": -11,
-      "avg_cost": "0.393363636364",
-      "market_price": "0.095",
-      "market_value": "-1.045",
-      "pnl": "3.282000000004",
-      "total_pnl": "328.200000000400",
-      "strike": "9.5",
-      "expiry": "2025-10-03T00:00:00",
-      "put_call": "PUT"
-    },
-    {
-      "symbol": "SOFI",
-      "contract_symbol": "SOFI  251003C00029000",
-      "qty": -3,
-      "avg_cost": "0.323366666667",
-      "market_price": "0.045",
-      "market_value": "-0.135",
-      "pnl": "0.835100000001",
-      "total_pnl": "83.510000000100",
-      "strike": "29.0",
-      "expiry": "2025-10-03T00:00:00",
-      "put_call": "CALL"
-    },
-    {
-      "symbol": "CRM",
-      "contract_symbol": "CRM   251003C00247500",
-      "qty": -1,
-      "avg_cost": "2.3034",
-      "market_price": "0.205",
-      "market_value": "-0.205",
-      "pnl": "2.0984",
-      "total_pnl": "209.8400",
-      "strike": "247.5",
-      "expiry": "2025-10-03T00:00:00",
+      "avg_cost": "0.1633627907",
+      "market_price": "0.18",
+      "market_value": "-7.74",
+      "pnl": "-0.7153999999",
+      "total_pnl": "-71.5399999900",
+      "strike": "12.0",
+      "expiry": "2025-10-10T00:00:00",
       "put_call": "CALL"
     }
   ],
@@ -146,5 +94,416 @@
       "pnl": "0.0",
       "description": "Schwab Prime Advantage Money Investor"
     }
-  ]
+  ],
+  "stock_allocations": {
+    "GOOG": {
+      "stock_value": "34503.00",
+      "stock_allocation_pct": "9.57",
+      "put_collateral": "0",
+      "put_collateral_pct": "0",
+      "total_allocation_pct": "9.57",
+      "cash_secured_puts": []
+    },
+    "BKNG": {
+      "stock_value": "16254.15",
+      "stock_allocation_pct": "4.51",
+      "put_collateral": "0",
+      "put_collateral_pct": "0",
+      "total_allocation_pct": "4.51",
+      "cash_secured_puts": []
+    },
+    "SOFI": {
+      "stock_value": "7572.00",
+      "stock_allocation_pct": "2.10",
+      "put_collateral": "0",
+      "put_collateral_pct": "0",
+      "total_allocation_pct": "2.10",
+      "cash_secured_puts": []
+    },
+    "AMZN": {
+      "stock_value": "54877.50",
+      "stock_allocation_pct": "15.22",
+      "put_collateral": "0",
+      "put_collateral_pct": "0",
+      "total_allocation_pct": "15.22",
+      "cash_secured_puts": []
+    },
+    "CRM": {
+      "stock_value": "24036.00",
+      "stock_allocation_pct": "6.67",
+      "put_collateral": "0",
+      "put_collateral_pct": "0",
+      "total_allocation_pct": "6.67",
+      "cash_secured_puts": []
+    },
+    "ASML": {
+      "stock_value": "33031.04",
+      "stock_allocation_pct": "9.16",
+      "put_collateral": "0",
+      "put_collateral_pct": "0",
+      "total_allocation_pct": "9.16",
+      "cash_secured_puts": []
+    },
+    "UBER": {
+      "stock_value": "19320.0",
+      "stock_allocation_pct": "5.36",
+      "put_collateral": "0",
+      "put_collateral_pct": "0",
+      "total_allocation_pct": "5.36",
+      "cash_secured_puts": []
+    },
+    "AAL": {
+      "stock_value": "128538.00",
+      "stock_allocation_pct": "35.65",
+      "put_collateral": "0",
+      "put_collateral_pct": "0",
+      "total_allocation_pct": "35.65",
+      "cash_secured_puts": []
+    }
+  },
+  "allocation_summary": {
+    "total_stock_allocation_pct": "88.24",
+    "total_put_collateral_pct": "0.00",
+    "total_combined_allocation_pct": "88.24",
+    "stocks_with_positions": 8,
+    "stocks_with_cash_secured_puts": 0,
+    "total_cash_secured_put_contracts": 0,
+    "unique_underlying_symbols": 8,
+    "cash_and_other_pct": "11.76"
+  },
+  "technicals": {
+    "stocks": {
+      "GOOG": {
+        "symbol": "GOOG",
+        "current_price": 246.45,
+        "position_data": {
+          "quantity": 140,
+          "avg_cost": 170.7469285714,
+          "market_value": 34503.0,
+          "pnl": 10598.430000004,
+          "pnl_pct": 44.34
+        },
+        "technical_indicators": {
+          "rsi": 38.51,
+          "sma_5": 245.27,
+          "sma_10": 247.31,
+          "sma_20": 246.48,
+          "ema_10": 246.22,
+          "ema_20": 242.12,
+          "ema_50": 226.66,
+          "bollinger_upper": 257.13,
+          "bollinger_lower": 235.83,
+          "support_level": 233.38,
+          "resistance_level": 256.7,
+          "volume_ratio": 0.91
+        },
+        "signals": [
+          "BELOW 20-DAY MA",
+          "EMA BULLISH ALIGNMENT (EMA10 > EMA20 > EMA50)",
+          "ABOVE SHORT-TERM EMAs",
+          "ABOVE LONG-TERM EMA (50)"
+        ]
+      },
+      "BKNG": {
+        "symbol": "BKNG",
+        "current_price": 5418.05,
+        "position_data": {
+          "quantity": 3,
+          "avg_cost": 4434.0,
+          "market_value": 16254.15,
+          "pnl": 2952.15,
+          "pnl_pct": 22.19
+        },
+        "technical_indicators": {
+          "rsi": 40.06,
+          "sma_5": 5409.45,
+          "sma_10": 5466.27,
+          "sma_20": 5485.49,
+          "ema_10": 5449.68,
+          "ema_20": 5477.37,
+          "ema_50": 5522.39,
+          "bollinger_upper": 5611.14,
+          "bollinger_lower": 5359.83,
+          "support_level": 5250.0,
+          "resistance_level": 5638.5,
+          "volume_ratio": 1.25
+        },
+        "signals": [
+          "BELOW 20-DAY MA",
+          "EMA BEARISH ALIGNMENT (EMA10 < EMA20 < EMA50)",
+          "BELOW SHORT-TERM EMAs",
+          "BELOW LONG-TERM EMA (50)"
+        ]
+      },
+      "SOFI": {
+        "symbol": "SOFI",
+        "current_price": 25.24,
+        "position_data": {
+          "quantity": 300,
+          "avg_cost": 28.5866333333,
+          "market_value": 7572.0,
+          "pnl": -1003.98999999,
+          "pnl_pct": -11.71
+        },
+        "technical_indicators": {
+          "rsi": 35.16,
+          "sma_5": 26.19,
+          "sma_10": 27.44,
+          "sma_20": 27.21,
+          "ema_10": 26.75,
+          "ema_20": 26.71,
+          "ema_50": 25.56,
+          "bollinger_upper": 29.89,
+          "bollinger_lower": 24.53,
+          "support_level": 24.84,
+          "resistance_level": 30.3,
+          "volume_ratio": 1.25
+        },
+        "signals": [
+          "BELOW 20-DAY MA",
+          "EMA BULLISH ALIGNMENT (EMA10 > EMA20 > EMA50)",
+          "BELOW SHORT-TERM EMAs",
+          "BELOW LONG-TERM EMA (50)",
+          "NEAR SUPPORT LEVEL"
+        ]
+      },
+      "AMZN": {
+        "symbol": "AMZN",
+        "current_price": 219.51,
+        "position_data": {
+          "quantity": 250,
+          "avg_cost": 199.23892,
+          "market_value": 54877.5,
+          "pnl": 5067.77,
+          "pnl_pct": 10.17
+        },
+        "technical_indicators": {
+          "rsi": 31.01,
+          "sma_5": 220.86,
+          "sma_10": 221.08,
+          "sma_20": 226.66,
+          "ema_10": 222.17,
+          "ema_20": 224.38,
+          "ema_50": 226.91,
+          "bollinger_upper": 239.02,
+          "bollinger_lower": 214.29,
+          "support_level": 216.47,
+          "resistance_level": 238.85,
+          "volume_ratio": 0.94
+        },
+        "signals": [
+          "STRONG DOWNTREND (Price < MA5 < MA10 < MA20)",
+          "EMA BEARISH ALIGNMENT (EMA10 < EMA20 < EMA50)",
+          "BELOW SHORT-TERM EMAs",
+          "BELOW LONG-TERM EMA (50)",
+          "NEAR SUPPORT LEVEL"
+        ]
+      },
+      "CRM": {
+        "symbol": "CRM",
+        "current_price": 240.36,
+        "position_data": {
+          "quantity": 100,
+          "avg_cost": 245.2566,
+          "market_value": 24036.0,
+          "pnl": -489.66,
+          "pnl_pct": -2.0
+        },
+        "technical_indicators": {
+          "rsi": 47.5,
+          "sma_5": 239.41,
+          "sma_10": 242.16,
+          "sma_20": 243.65,
+          "ema_10": 241.17,
+          "ema_20": 242.63,
+          "ema_50": 244.47,
+          "bollinger_upper": 252.39,
+          "bollinger_lower": 234.91,
+          "support_level": 233.51,
+          "resistance_level": 255.34,
+          "volume_ratio": 1.0
+        },
+        "signals": [
+          "BELOW 20-DAY MA",
+          "EMA BEARISH ALIGNMENT (EMA10 < EMA20 < EMA50)",
+          "BELOW SHORT-TERM EMAs",
+          "BELOW LONG-TERM EMA (50)"
+        ]
+      },
+      "ASML": {
+        "symbol": "ASML",
+        "current_price": 1032.22,
+        "position_data": {
+          "quantity": 32,
+          "avg_cost": 710.828125,
+          "market_value": 33031.04,
+          "pnl": 10284.54,
+          "pnl_pct": 45.21
+        },
+        "technical_indicators": {
+          "rsi": 89.2,
+          "sma_5": 999.27,
+          "sma_10": 976.57,
+          "sma_20": 912.8,
+          "ema_10": 974.71,
+          "ema_20": 924.02,
+          "ema_50": 824.31,
+          "bollinger_upper": 1065.76,
+          "bollinger_lower": 759.84,
+          "support_level": 786.75,
+          "resistance_level": 1040.23,
+          "volume_ratio": 0.82
+        },
+        "signals": [
+          "OVERBOUGHT (RSI > 70)",
+          "STRONG UPTREND (Price > MA5 > MA10 > MA20)",
+          "EMA BULLISH ALIGNMENT (EMA10 > EMA20 > EMA50)",
+          "ABOVE SHORT-TERM EMAs",
+          "ABOVE LONG-TERM EMA (50)",
+          "NEAR RESISTANCE LEVEL"
+        ]
+      },
+      "UBER": {
+        "symbol": "UBER",
+        "current_price": 96.6,
+        "position_data": {
+          "quantity": 200,
+          "avg_cost": 67.6216,
+          "market_value": 19320.0,
+          "pnl": 5795.68,
+          "pnl_pct": 42.85
+        },
+        "technical_indicators": {
+          "rsi": 44.1,
+          "sma_5": 97.47,
+          "sma_10": 97.84,
+          "sma_20": 96.79,
+          "ema_10": 97.22,
+          "ema_20": 96.61,
+          "ema_50": 94.85,
+          "bollinger_upper": 100.49,
+          "bollinger_lower": 93.09,
+          "support_level": 91.38,
+          "resistance_level": 101.99,
+          "volume_ratio": 0.56
+        },
+        "signals": [
+          "BELOW 20-DAY MA",
+          "EMA BULLISH ALIGNMENT (EMA10 > EMA20 > EMA50)",
+          "BELOW SHORT-TERM EMAs",
+          "ABOVE LONG-TERM EMA (50)"
+        ]
+      },
+      "AAL": {
+        "symbol": "AAL",
+        "current_price": 11.58,
+        "position_data": {
+          "quantity": 11100,
+          "avg_cost": 11.7874198198,
+          "market_value": 128538.0,
+          "pnl": -2302.35999978,
+          "pnl_pct": -1.76
+        },
+        "technical_indicators": {
+          "rsi": 27.49,
+          "sma_5": 11.38,
+          "sma_10": 11.61,
+          "sma_20": 12.15,
+          "ema_10": 11.65,
+          "ema_20": 11.97,
+          "ema_50": 12.52,
+          "bollinger_upper": 13.38,
+          "bollinger_lower": 10.91,
+          "support_level": 11.07,
+          "resistance_level": 13.23,
+          "volume_ratio": 0.86
+        },
+        "signals": [
+          "OVERSOLD (RSI < 30)",
+          "BELOW 20-DAY MA",
+          "EMA BEARISH ALIGNMENT (EMA10 < EMA20 < EMA50)",
+          "BELOW SHORT-TERM EMAs",
+          "BELOW LONG-TERM EMA (50)"
+        ]
+      }
+    },
+    "options": {
+      "AAL   251010C00012000": {
+        "contract_symbol": "AAL   251010C00012000",
+        "underlying_symbol": "AAL",
+        "position_data": {
+          "quantity": -43,
+          "avg_cost": 0.1633627907,
+          "current_price": 0.18,
+          "market_value": -7.74,
+          "pnl": -0.7153999999,
+          "pnl_pct": -10.18
+        },
+        "option_data": {
+          "strike": 12.0,
+          "expiry": "2025-10-10",
+          "days_to_expiry": 5,
+          "option_type": "CALL"
+        },
+        "greeks": {
+          "delta": 0.329,
+          "gamma": 0.417,
+          "theta": -0.023,
+          "vega": 0.006,
+          "rho": 0.001,
+          "implied_volatility": 53.786
+        },
+        "market_data": {
+          "bid": 0.17,
+          "ask": 0.19,
+          "last": 0.18,
+          "mark": 0.18,
+          "volume": 5315,
+          "open_interest": 7479,
+          "time_value": 0.18,
+          "theoretical_value": 0,
+          "in_the_money": false
+        },
+        "signals": [
+          "EXPIRING SOON (\u22647 days)",
+          "VERY HIGH IV - VOLATILITY CRUSH RISK (IV > 60%)",
+          "HIGH TIME VALUE (>50% of premium)",
+          "IV CRUSH OPPORTUNITY - SHORT PREMIUM",
+          "PIN RISK - NEAR EXPIRY WITH DELTA EXPOSURE"
+        ],
+        "data_source": "options_chain_fallback",
+        "streaming_info": {
+          "fields_requested": "0,1,2,3,4,5,6,7,8,9,10,16,17,18,19,20,25,27,28,29,30,31,32",
+          "underlying_parsed": "AAL",
+          "strike_parsed": 12.0
+        }
+      }
+    },
+    "summary": {
+      "total_stocks_analyzed": 8,
+      "total_options_analyzed": 1,
+      "stock_signals": {
+        "BELOW 20-DAY MA": 6,
+        "EMA BULLISH ALIGNMENT (EMA10 > EMA20 > EMA50)": 4,
+        "ABOVE SHORT-TERM EMAs": 2,
+        "ABOVE LONG-TERM EMA (50)": 3,
+        "EMA BEARISH ALIGNMENT (EMA10 < EMA20 < EMA50)": 4,
+        "BELOW SHORT-TERM EMAs": 6,
+        "BELOW LONG-TERM EMA (50)": 5,
+        "NEAR SUPPORT LEVEL": 2,
+        "STRONG DOWNTREND (Price < MA5 < MA10 < MA20)": 1,
+        "OVERBOUGHT (RSI > 70)": 1,
+        "STRONG UPTREND (Price > MA5 > MA10 > MA20)": 1,
+        "NEAR RESISTANCE LEVEL": 1,
+        "OVERSOLD (RSI < 30)": 1
+      },
+      "options_signals": {
+        "EXPIRING SOON (\u22647 days)": 1,
+        "VERY HIGH IV - VOLATILITY CRUSH RISK (IV > 60%)": 1,
+        "HIGH TIME VALUE (>50% of premium)": 1,
+        "IV CRUSH OPPORTUNITY - SHORT PREMIUM": 1,
+        "PIN RISK - NEAR EXPIRY WITH DELTA EXPOSURE": 1
+      }
+    }
+  }
 }
